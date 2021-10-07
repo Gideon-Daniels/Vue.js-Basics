@@ -15,7 +15,18 @@ const app = Vue.createApp({
   methods: {
      toggleShowBooks () {
          this.showBooks = !this.showBooks;
+     },
+     toggleFav(book){
+        //  if current value true reverse it to false
+        book.isFav = !book.isFav
      }
+  },
+//   is a way to define a data property inside our components
+// depends on other data and update the data 
+computed: {
+      filteredBooks() {
+          return this.books.filter( (book) => book.isFav)      
+      }
   }
 })
 

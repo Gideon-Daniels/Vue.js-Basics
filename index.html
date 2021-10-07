@@ -19,11 +19,23 @@
       <div v-if="showBooks">
         <ul>
           <!-- add li tag to each book object -->
-          <li v-for="book in books">
+          <div class="all-books">
+            <h1>All Your Books</h1>
+          <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
             <img :src="book.img" :alt="book.title">
             <h3>{{ book.title }}</h3>
             <p>{{ book.author }}</p>
           </li>
+          </div>
+          <div class="favorite-books">
+            <h1>Favorite Books</h1>
+          <li v-for="book in filteredBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+            <img :src="book.img" :alt="book.title">
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+          </li>
+          </div>
+          
         </ul>
       </div>
 
