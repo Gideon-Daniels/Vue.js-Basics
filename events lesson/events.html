@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Hello, Vue :)</h1>
+
+    <!-- anything inside of the app is controlled by Vue -->
+    <div id="app">
+      <h2>Check Console</h2>
+      <!-- mouse events -->
+      <div class="box" @mouseover="handleEvent">mouseover (enter)</div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">double click</div>
+      <div class="box" @mousemove="handleMousemove">Position - {{x}} {{y}}</div>
+      
+    </div>
+
+    <script src="events.js"></script>
+</body>
+</html>
